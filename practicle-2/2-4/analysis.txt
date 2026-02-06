@@ -1,0 +1,12 @@
+Команда:
+strace ./task 2>&1 | grep open
+
+Результат:
+
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "nofile.txt", O_RDONLY) = -1 ENOENT (No such file or directory)
+write(2, "fopen: No such file or directory"..., 33fopen: No such file or directory
+
+Вывод:
+Ошибка ENOENT означает, что файл не существует.
